@@ -6,6 +6,5 @@ import train.registeration.repository.PermissionRepository;
 
 @Service
 public class PermissionService {
-    @Autowired
     PermissionRepository permissionRepository;
 }

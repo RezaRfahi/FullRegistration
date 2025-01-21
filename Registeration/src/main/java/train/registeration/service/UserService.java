@@ -13,7 +13,6 @@ import java.util.List;
 
 @Service
 public class UserService {
-    @Autowired
     UserRepository userRepository;
 
     public List<User> findAll() {

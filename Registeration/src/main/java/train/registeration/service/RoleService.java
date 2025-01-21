@@ -6,6 +6,5 @@ import train.registeration.repository.RoleRepository;
 
 @Service
 public class RoleService {
-    @Autowired
     RoleRepository roleRepository;
 }
