@@ -11,6 +11,6 @@ import train.registeration.entity.User;
 import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
-    Page<User> findAllWithPagination(Pageable pageable);
-    List<User> findByUsername(String username, Sort sort);
+    Page<User> findAllWithPagination(Pageable pageable, Sort sort);
+    User findByUsername(String username);
 }
