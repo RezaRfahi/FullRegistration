@@ -1,6 +1,8 @@
 package train.registeration.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Date;
@@ -10,11 +12,13 @@ import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
 
+@AllArgsConstructor
 @Slf4j
 @Getter
 @Setter
 @Entity
 @Table(name = "user")
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
