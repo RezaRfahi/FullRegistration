@@ -1,16 +1,21 @@
 package train.registeration.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 
 import java.util.HashSet;
 import java.util.Set;
 
+@AllArgsConstructor
 @Getter
 @Setter
 @Entity
 @Table(name = "permission")
+@NoArgsConstructor
 public class Permission {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
