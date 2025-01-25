@@ -73,11 +73,15 @@ public class UserController {
     @PostMapping("users")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         try {
-            User created_user = userService.save(user.getUsername(), user.getPassword(), user.getPhone(), user.getBirthday(), user.getEmail());
-            if (created_user == null) {
-                return ResponseEntity.badRequest().build();
+            User existingUser = userService.findByUsername(user.getUsername());
+            if (existingUser == null) {
+                User created_user = userService.save(user.getUsername(), user.getPassword(), user.getPhone(), user.getBirthday(), user.getEmail());
+                if (created_user == null) {
+                    return ResponseEntity.badRequest().build();
+                }else
+                    return ResponseEntity.ok(created_user);
             }else
-                return ResponseEntity.ok(created_user);
+                return ResponseEntity.status(HttpStatus.CONFLICT).build();
         } catch (Exception e) {
            return ResponseEntity.badRequest().build();
         }
@@ -102,8 +106,12 @@ public class UserController {
     public ResponseEntity<HttpStatus> deleteUser(@PathVariable("id") long id)
     {
         try {
-            Boolean execute = userService.delete(id);
-            return execute ? new ResponseEntity(HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            User user = userService.findById(id);
+            if (user != null) {
+            boolean execute = userService.delete(id);
+            return execute ? new ResponseEntity<>(HttpStatus.OK) : new ResponseEntity<>(HttpStatus.CONFLICT);
+            }else
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         } catch (Exception e) {
            return ResponseEntity.badRequest().build();
         }
