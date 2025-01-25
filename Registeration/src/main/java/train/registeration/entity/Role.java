@@ -23,6 +23,7 @@ public class Role {
     @ManyToMany(mappedBy = "permission_role", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Permission> permissions = new HashSet<>();
 
-
+    @ManyToMany(mappedBy = "role_user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<User> users = new HashSet<>();
 
 }
