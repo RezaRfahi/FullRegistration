@@ -15,6 +15,7 @@ import train.registeration.entity.User;
 import train.registeration.repository.UserRepository;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -44,6 +45,13 @@ public class UserService {
     {
         assert username != null;
         return userRepository.findByUsername(username);
+    }
+
+    public Set<Role> findUserRoles(long userId)
+    {
+        User user = userRepository.findById(userId).orElse(null);
+        assert user != null;
+        return user.getRoles();
     }
 
     public User save(String username, String password, String phone, byte birth_day, byte birth_month, byte birth_year, String email)
