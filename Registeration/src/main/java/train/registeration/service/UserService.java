@@ -54,9 +54,8 @@ public class UserService {
         return user.getRoles();
     }
 
-    public User save(String username, String password, String phone, byte birth_day, byte birth_month, byte birth_year, String email)
+    public User save(String username, String password, String phone, Date birthday, String email)
     {
-        Date birthday = new Date(birth_year, birth_month, birth_day);
         password = DigestUtils.md5DigestAsHex(password.getBytes());
         User user = new User();
         user.setUsername(username);
@@ -67,10 +66,9 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public int update(long id, String username, String password, String phone, String email, byte day, byte month, byte year)
+    public int update(long id, String username, String password, String phone, String email, Date birthday)
     {
         User existsUser = findById(id);
-        Date birthday = new Date(year, month, day);
         existsUser.setUsername(username);
         if (password != null){
             password = DigestUtils.md5DigestAsHex(password.getBytes());

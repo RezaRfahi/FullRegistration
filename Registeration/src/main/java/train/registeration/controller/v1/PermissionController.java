@@ -12,4 +12,7 @@ import train.registeration.service.PermissionService;
 public class PermissionController {
     @Autowired
     PermissionService permissionService;
+
+
+
 }
