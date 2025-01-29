@@ -50,7 +50,7 @@ public class RoleController {
     }
 
     @GetMapping("roles/users/{id}")
-    public ResponseEntity<List<User>> getUserRoles(@PathVariable int id)
+    public ResponseEntity<List<User>> getRoles(@PathVariable int id)
     {
         try {
             Role role = roleService.findById(id);
@@ -69,7 +69,7 @@ public class RoleController {
     }
 
     @GetMapping("roles/permissions/{id}")
-    public ResponseEntity<List<Permission>> getRolePermissions(@PathVariable int id)
+    public ResponseEntity<List<Permission>> getPermissions(@PathVariable int id)
     {
         try {
             Role role = roleService.findById(id);
@@ -90,11 +90,13 @@ public class RoleController {
     public ResponseEntity<Role> createRole(@RequestBody Role role)
     {
         try {
+            if(roleService.findByName(role.getName()) != null)
+            {
+                return ResponseEntity.status(HttpStatus.CONFLICT).build();
+            }
+            Role created_role = roleService.save(role.getName());
+            return ResponseEntity.status(HttpStatus.CREATED).body(created_role);
 
-            Role existsRole = roleService.findByName(role.getName());
-            if (existsRole == null) {
-                return ResponseEntity.ok(role);
-            }else return ResponseEntity.status(HttpStatus.CONFLICT).build();
         } catch (Exception e) {
            return ResponseEntity.badRequest().build();
         }
@@ -106,13 +108,12 @@ public class RoleController {
         try {
             Role existsrole = roleService.findById(id);
             if (existsrole == null) {
-                if (roleService.save(role.getName()) == null) {;
-                    return ResponseEntity.badRequest().build();
+                    return ResponseEntity.status(HttpStatus.CONFLICT).build();
+            }
+            existsrole.setName(role.getName());
+            existsrole = roleService.save(existsrole.getName());
+            return ResponseEntity.ok(existsrole);
 
-                }else
-                    return ResponseEntity.ok(role);
-            }else
-                return ResponseEntity.status(HttpStatus.CONFLICT).build();
         } catch (Exception e) {
            return ResponseEntity.badRequest().build();
         }
