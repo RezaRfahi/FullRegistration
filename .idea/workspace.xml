@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b42b3da6-c2cc-48c8-b326-181f563ac6cf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Registeration/data/testdb.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/Registeration/data/testdb.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Registeration/data/testdb.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/Registeration/data/testdb.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Registeration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Registeration/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Registeration/src/main/java/train/registeration/controller/v1/PermissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Registeration/src/main/java/train/registeration/controller/v1/PermissionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Registeration/src/main/java/train/registeration/entity/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/Registeration/src/main/java/train/registeration/entity/Permission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +28,7 @@
     "Maven.Registeration.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "Controller",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "H:/Java/Spring Boot/Final Project(Sematec)/FullRegistration/Registeration",
     "node.js.detected.package.eslint": "true",
@@ -130,6 +126,7 @@
       <updated>1737833376755</updated>
       <workItem from="1737833377825" duration="1345000" />
       <workItem from="1737848936688" duration="743000" />
+      <workItem from="1740936900417" duration="503000" />
     </task>
     <servers />
   </component>

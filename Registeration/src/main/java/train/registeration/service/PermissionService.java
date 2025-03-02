@@ -1,6 +1,6 @@
 package train.registeration.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import train.registeration.entity.Permission;
 import train.registeration.entity.Role;
@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 @Service
+@Slf4j
 public class PermissionService {
     PermissionRepository permissionRepository;
 

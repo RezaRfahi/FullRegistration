@@ -1,9 +1,6 @@
 package train.registeration.service;
 
-import com.nimbusds.openid.connect.sdk.assurance.evidences.attachment.Digest;
-import jakarta.annotation.Nullable;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -15,11 +12,11 @@ import train.registeration.entity.User;
 import train.registeration.repository.UserRepository;
 
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 @Service
+@Slf4j
 public class UserService {
     UserRepository userRepository;
 
