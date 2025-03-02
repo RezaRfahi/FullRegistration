@@ -18,7 +18,7 @@ public class UserDTO {
     String email;
     String phone;
     Date registrationDate;
-    Date birthDay;
+    Date birthday;
     Set<RoleDTO> roles;
 
 }
