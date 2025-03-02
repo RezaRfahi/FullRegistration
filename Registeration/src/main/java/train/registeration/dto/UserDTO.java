@@ -3,7 +3,6 @@ package train.registeration.dto;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
-import train.registeration.entity.Role;
 
 import java.util.Date;
 import java.util.Set;
@@ -20,6 +19,6 @@ public class UserDTO {
     String phone;
     Date registrationDate;
     Date birthDay;
-    Set<Role> roles;
+    Set<RoleDTO> roles;
 
 }
