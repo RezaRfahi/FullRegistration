@@ -9,7 +9,7 @@ import train.registeration.entity.User;
 
 import java.util.List;
 
-@Mapper()
+@Mapper
 public interface UserMapper {
 
     UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
